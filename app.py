@@ -6,20 +6,30 @@ import os
 st.markdown("""
 <style>
 
-/* Khoảng cách menu */
-section[data-testid="stSidebar"] .stRadio > div{
-    gap:10px;
+/* Thu nhỏ sidebar còn khoảng 2/3 */
+section[data-testid="stSidebar"] {
+    width: 200px !important;
 }
 
-/* Khung menu */
+/* Khoảng cách giữa menu */
+section[data-testid="stSidebar"] .stRadio > div{
+    gap:12px;
+}
+
+/* Khung menu chữ nhật đồng nhất */
 section[data-testid="stSidebar"] .stRadio label{
     background-color:#6ccf8f;
     color:white;
-    padding:12px;
+    padding:14px;
     border-radius:6px;
     border:1px solid #5bb97a;
-    display:block;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
     font-weight:bold;
+    height:50px;           /* thống nhất chiều cao */
+    width:100%;
 }
 
 /* Hover */
@@ -29,7 +39,6 @@ section[data-testid="stSidebar"] .stRadio label:hover{
 
 </style>
 """, unsafe_allow_html=True)
-
 # ===== CẤU HÌNH TRANG =====
 st.set_page_config(page_title="Dịch vụ thuê xe", page_icon="🚗", layout="wide")
 
