@@ -25,36 +25,38 @@ menu = st.radio(
 # TRANG CHỦ - GALLERY XE
 # ===============================
 
+import streamlit as st
+
+st.set_page_config(page_title="Dịch vụ thuê xe", layout="wide")
+
+menu = st.sidebar.selectbox(
+    "Menu",
+    ["Trang chủ","Báo giá","Đặt xe","Liên hệ"]
+)
+
 if menu == "Trang chủ":
 
-    st.header("Các dòng xe của chúng tôi")
+    st.title("Dịch vụ cho thuê xe du lịch")
 
     cars = {
-        "Toyota Innova": [
-            "Toyota Innova.jpg",
-            "Toyota Innova3.jpg",
-            "Toyota Innova4.jpg",
-            "Toyota Innova5.jpg"
-            "Toyota Innova6.jpg"
-            "Toyota Innova7.jpg"
+        "Toyota Innova":[
+            "https://upload.wikimedia.org/wikipedia/commons/3/3e/Toyota_Innova.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/0/05/Toyota_Innova_interior.jpg"
         ],
 
         "Toyota Fortuner":[
-            "Toyota Fortuner.jpg",
-            "Toyota Fortuner3.jpg",
-            "Toyota Fortuner4.jpg"
+            "https://upload.wikimedia.org/wikipedia/commons/7/7b/Toyota_Fortuner.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/e/e5/Toyota_Fortuner_interior.jpg"
         ],
 
         "Toyota Camry":[
-            "Toyota Camry.jpg",
-            "Toyota Camry3.jpg",
-            "Toyota Camry4.jpg"
+            "https://upload.wikimedia.org/wikipedia/commons/3/3a/Toyota_Camry_2018.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/1/12/Toyota_Camry_interior.jpg"
         ],
 
         "Kia Carnival":[
-            "Kia Carnival.jpg",
-            "Kia Carnival3.jpg",
-            "Kia Carnival4.jpg"
+            "https://upload.wikimedia.org/wikipedia/commons/5/5a/Kia_Carnival.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/b/b8/Kia_Carnival_interior.jpg"
         ]
     }
 
@@ -66,18 +68,17 @@ if menu == "Trang chủ":
 
             st.image(images[0], use_container_width=True)
 
-            if st.button(f"Xem gallery {car}", key=car):
+            if st.button(f"Xem ảnh {car}"):
 
                 st.subheader(car)
 
-                gallery = st.columns(3)
+                gallery = st.columns(2)
 
                 for j,img in enumerate(images):
 
-                    with gallery[j % 3]:
+                    with gallery[j%2]:
 
                         st.image(img, use_container_width=True)
-
 
 # ===============================
 # BẢNG GIÁ
