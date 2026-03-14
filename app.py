@@ -40,23 +40,29 @@ if menu == "Trang chủ":
 
     cars = {
         "Toyota Innova":[
-            "https://upload.wikimedia.org/wikipedia/commons/3/3e/Toyota_Innova.jpg",
-            "https://upload.wikimedia.org/wikipedia/commons/0/05/Toyota_Innova_interior.jpg"
+        "Toyota Innova.jpeg",
+        "Toyota Innova3.jpeg",
+        "Toyota Innova4.jpeg",
+        "Toyota Innova5.jpeg",
+        "Toyota Innova6.jpeg"
         ],
 
         "Toyota Fortuner":[
-            "https://upload.wikimedia.org/wikipedia/commons/7/7b/Toyota_Fortuner.jpg",
-            "https://upload.wikimedia.org/wikipedia/commons/e/e5/Toyota_Fortuner_interior.jpg"
+             "Toyota Fortuner.jpeg",
+             "Toyota Fortuner3.jpeg",
+             "Toyota Fortuner4.jpeg"
         ],
 
         "Toyota Camry":[
-            "https://upload.wikimedia.org/wikipedia/commons/3/3a/Toyota_Camry_2018.jpg",
-            "https://upload.wikimedia.org/wikipedia/commons/1/12/Toyota_Camry_interior.jpg"
+             "Toyota Camry.jpeg",
+             "Toyota Camry3.jpeg",
+             "Toyota Camry4.jpeg"
         ],
 
         "Kia Carnival":[
-            "https://upload.wikimedia.org/wikipedia/commons/5/5a/Kia_Carnival.jpg",
-            "https://upload.wikimedia.org/wikipedia/commons/b/b8/Kia_Carnival_interior.jpg"
+             "Kia Carnival.jpeg"
+             "Kia Carnival3.jpeg"
+             "Kia Carnival4.jpeg"
         ]
     }
 
