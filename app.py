@@ -1,6 +1,32 @@
 import streamlit as st
 import pandas as pd
 import os
+st.markdown("""
+<style>
+
+/* Khoảng cách giữa các menu */
+section[data-testid="stSidebar"] .stRadio > div{
+    gap:10px;
+}
+
+/* Khung menu */
+section[data-testid="stSidebar"] .stRadio label{
+    background-color:#6ccf8f;   /* xanh lá nhạt */
+    color:white;                /* chữ trắng */
+    padding:12px;
+    border-radius:6px;
+    border:1px solid #5bb97a;
+    display:block;
+    font-weight:bold;
+}
+
+/* Khi rê chuột */
+section[data-testid="stSidebar"] .stRadio label:hover{
+    background-color:#57b876;
+}
+
+</style>
+""", unsafe_allow_html=True)
 
 
 st.set_page_config(page_title="Dịch vụ thuê xe", page_icon="🚗", layout="wide")
