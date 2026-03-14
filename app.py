@@ -31,7 +31,7 @@ if menu == "Trang chủ":
 
     cars = {
         "Toyota Innova": [
-            "Toyota Innova.png",
+            "Toyota Innova.jpg",
             "Toyota Innova3.jpg",
             "Toyota Innova4.jpg",
             "Toyota Innova5.jpg"
