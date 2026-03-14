@@ -67,7 +67,7 @@ if menu == "Trang chủ":
 
             # hiển thị ảnh đại diện
             if os.path.exists(images[0]):
-                st.image(images[0], use_container_width=True)
+                st.image(images[0], use_container_width=4000)
             else:
                 st.warning(f"Không tìm thấy ảnh: {images[0]}")
 
