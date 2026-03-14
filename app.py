@@ -1,18 +1,20 @@
 import streamlit as st
 import pandas as pd
 import os
+
+# ===== CSS MENU =====
 st.markdown("""
 <style>
 
-/* Khoảng cách giữa các menu */
+/* Khoảng cách menu */
 section[data-testid="stSidebar"] .stRadio > div{
     gap:10px;
 }
 
 /* Khung menu */
 section[data-testid="stSidebar"] .stRadio label{
-    background-color:#6ccf8f;   /* xanh lá nhạt */
-    color:white;                /* chữ trắng */
+    background-color:#6ccf8f;
+    color:white;
     padding:12px;
     border-radius:6px;
     border:1px solid #5bb97a;
@@ -20,7 +22,7 @@ section[data-testid="stSidebar"] .stRadio label{
     font-weight:bold;
 }
 
-/* Khi rê chuột */
+/* Hover */
 section[data-testid="stSidebar"] .stRadio label:hover{
     background-color:#57b876;
 }
@@ -28,14 +30,15 @@ section[data-testid="stSidebar"] .stRadio label:hover{
 </style>
 """, unsafe_allow_html=True)
 
-
+# ===== CẤU HÌNH TRANG =====
 st.set_page_config(page_title="Dịch vụ thuê xe", page_icon="🚗", layout="wide")
 
 # ===== LOGO =====
 col1, col2 = st.columns([1,4])
 
 with col1:
-    st.image("logo.png", width=400)
+    if os.path.exists("logo.png"):
+        st.image("logo.png", width=200)
 
 with col2:
     st.title("Chauffeur & Limousine")
@@ -43,45 +46,44 @@ with col2:
 
 st.divider()
 
-menu = st.radio(
-    "Menu",
-    ["Trang chủ","Bảng giá","Đặt xe","Liên hệ"],
-    horizontal=True
+# ===== MENU =====
+menu = st.sidebar.radio(
+    "MENU",
+    ["Trang chủ","Bảng giá","Đặt xe","Liên hệ"]
 )
 
 # ===============================
 # TRANG CHỦ
 # ===============================
 
-
-
 if menu == "Trang chủ":
 
     st.header("Các dòng xe của chúng tôi")
 
     cars = {
+
         "Toyota Innova":[
-        "Toyota Innova.jpg",
-        "Toyota Innova3.jpg",
-        "Toyota Innova4.jpg",
+            "Toyota Innova.jpg",
+            "Toyota Innova3.jpg",
+            "Toyota Innova4.jpg",
         ],
 
         "Toyota Fortuner":[
-             "Toyota Fortuner.jpg",
-             "Toyota Fortuner3.jpg",
-             "Toyota Fortuner4.jpg"
+            "Toyota Fortuner.jpg",
+            "Toyota Fortuner3.jpg",
+            "Toyota Fortuner4.jpg"
         ],
 
         "Toyota Camry":[
-             "Toyota Camry.jpg",
-             "Toyota Camry3.jpg",
-             "Toyota Camry4.jpg"
+            "Toyota Camry.jpg",
+            "Toyota Camry3.jpg",
+            "Toyota Camry4.jpg"
         ],
 
         "Kia Carnival":[
-             "Kia Carnival.jpg",
-             "Kia Carnival3.jpg",
-             "Kia Carnival4.jpg"
+            "Kia Carnival.jpg",
+            "Kia Carnival3.jpg",
+            "Kia Carnival4.jpg"
         ]
     }
 
@@ -91,13 +93,13 @@ if menu == "Trang chủ":
 
         with cols[i]:
 
-            # hiển thị ảnh đại diện
+            # ảnh đại diện
             if os.path.exists(images[0]):
-                st.image(images[0], use_container_width=4000)
+                st.image(images[0], width=600)
             else:
                 st.warning(f"Không tìm thấy ảnh: {images[0]}")
 
-            # nút xem gallery
+            # nút xem ảnh
             if st.button(f"Xem ảnh {car}", key=car):
 
                 st.subheader(car)
@@ -106,13 +108,13 @@ if menu == "Trang chủ":
 
                 for j, img in enumerate(images):
 
-                  with cols_gallery[j]:
+                    with cols_gallery[j]:
 
-                    if os.path.exists(img):
-                     st.image(img, width=4000)
-                    else:
-                     st.warning(f"Thiếu ảnh: {img}")
-                 
+                        if os.path.exists(img):
+                            st.image(img, width=600)
+                        else:
+                            st.warning(f"Thiếu ảnh: {img}")
+
 # ===============================
 # BẢNG GIÁ
 # ===============================
