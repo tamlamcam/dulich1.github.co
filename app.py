@@ -9,7 +9,7 @@ st.set_page_config(page_title="Dịch vụ thuê xe", page_icon="🚗", layout="
 col1, col2 = st.columns([1,4])
 
 with col1:
-    st.image("logo.png", width=120)
+    st.image("logo.png", width=400)
 
 with col2:
     st.title("Chauffeur & Limousine")
@@ -83,7 +83,7 @@ if menu == "Trang chủ":
                     with gallery[j % 2]:
 
                         if os.path.exists(img):
-                            st.image(img, use_container_width=True)
+                            st.image(img, use_container_width=600)
                         else:
                             st.warning(f"Thiếu ảnh: {img}")
 
