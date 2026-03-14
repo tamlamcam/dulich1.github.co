@@ -2,21 +2,21 @@ import streamlit as st
 import pandas as pd
 import os
 
-# ===== CSS MENU =====
+# ===== CSS GIAO DIỆN =====
 st.markdown("""
 <style>
 
-/* Thu nhỏ sidebar còn khoảng 2/3 */
+/* Thu nhỏ sidebar */
 section[data-testid="stSidebar"] {
-    width: 200px !important;
+    width: 220px !important;
 }
 
-/* Khoảng cách giữa menu */
+/* Khoảng cách menu */
 section[data-testid="stSidebar"] .stRadio > div{
     gap:12px;
 }
 
-/* Khung menu chữ nhật đồng nhất */
+/* Khung menu */
 section[data-testid="stSidebar"] .stRadio label{
     background-color:#6ccf8f;
     color:white;
@@ -28,8 +28,7 @@ section[data-testid="stSidebar"] .stRadio label{
     align-items:center;
     text-align:center;
     font-weight:bold;
-    height:50px;           /* thống nhất chiều cao */
-    width:100%;
+    height:50px;
 }
 
 /* Hover */
@@ -39,15 +38,16 @@ section[data-testid="stSidebar"] .stRadio label:hover{
 
 </style>
 """, unsafe_allow_html=True)
+
 # ===== CẤU HÌNH TRANG =====
 st.set_page_config(page_title="Dịch vụ thuê xe", page_icon="🚗", layout="wide")
 
-# ===== LOGO =====
+# ===== HEADER =====
 col1, col2 = st.columns([1,4])
 
 with col1:
     if os.path.exists("logo.png"):
-        st.image("logo.png", width=200)
+        st.image("logo.png", width=150)
 
 with col2:
     st.title("Chauffeur & Limousine")
@@ -102,9 +102,9 @@ if menu == "Trang chủ":
 
         with cols[i]:
 
-            # ảnh đại diện
+            # ảnh đại diện xe
             if os.path.exists(images[0]):
-                st.image(images[0], width=600)
+                st.image(images[0], use_container_width=True)
             else:
                 st.warning(f"Không tìm thấy ảnh: {images[0]}")
 
@@ -113,16 +113,12 @@ if menu == "Trang chủ":
 
                 st.subheader(car)
 
-                cols_gallery = st.columns(len(images))
+                for img in images:
 
-                for j, img in enumerate(images):
-
-                    with cols_gallery[j]:
-
-                        if os.path.exists(img):
-                            st.image(img, width=600)
-                        else:
-                            st.warning(f"Thiếu ảnh: {img}")
+                    if os.path.exists(img):
+                        st.image(img, use_container_width=True)
+                    else:
+                        st.warning(f"Thiếu ảnh: {img}")
 
 # ===============================
 # BẢNG GIÁ
