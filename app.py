@@ -60,9 +60,9 @@ if menu == "Trang chủ":
 
             st.image(images[0])
 
-            if st.button(f"Xem chi tiết {Toyota Innova}"):
+            if st.button(f"Xem chi tiết {"Toyota Innova"}"):
 
-                st.subheader(Toyota Innova)
+                st.subheader("Toyota Innova")
 
                 st.image(Toyota Innova.png)
 
