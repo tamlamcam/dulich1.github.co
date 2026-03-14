@@ -64,7 +64,7 @@ if menu == "Trang chủ":
 
                 st.subheader("Toyota Innova")
 
-                st.image(Toyota Innova.png)
+                st.image("Toyota Innova.png")
 
         i += 1
 
