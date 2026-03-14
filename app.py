@@ -31,60 +31,52 @@ if menu == "Trang chủ":
 
     cars = {
         "Toyota Innova": [
-            "Toyota Innova.jpg",
-            "Toyota Innova2.jpg"
+            "Toyota Innova.png",
+            "Toyota Innova3.jpg",
+            "Toyota Innova4.jpg",
+            "Toyota Innova5.jpg"
+            "Toyota Innova6.jpg"
+            "Toyota Innova7.jpg"
         ],
 
         "Toyota Fortuner":[
             "Toyota Fortuner.jpg",
-            "Toyota Fortuner2.jpg"
+            "Toyota Fortuner3.jpg",
+            "Toyota Fortuner4.jpg"
         ],
 
         "Toyota Camry":[
             "Toyota Camry.jpg",
-            "Toyota Camry2.jpg"
+            "Toyota Camry3.jpg",
+            "Toyota Camry4.jpg"
         ],
 
         "Kia Carnival":[
             "Kia Carnival.jpg",
-            "Kia Carnival2.jpg"
+            "Kia Carnival3.jpg",
+            "Kia Carnival4.jpg"
         ]
     }
 
     cols = st.columns(4)
 
-    i = 0
-
-    for car, images in cars.items():
+    for i,(car,images) in enumerate(cars.items()):
 
         with cols[i]:
 
-            st.image(images[0], width=300)
+            st.image(images[0], use_container_width=True)
 
-            if st.button(f"Xem ảnh {car}"):
+            if st.button(f"Xem gallery {car}", key=car):
 
                 st.subheader(car)
 
-                st.image(images, width=400)
+                gallery = st.columns(3)
 
-        i += 1
+                for j,img in enumerate(images):
 
-    cols = st.columns(4)
+                    with gallery[j % 3]:
 
-    i = 0
-    for car, images in cars.items():
-
-        with cols[i]:
-
-            st.image(images[0])
-
-            if st.button(f"Xem chi tiết {"Toyota Innova"}"):
-
-                st.subheader("Toyota Innova")
-
-                st.image("Toyota Innova.png")
-
-        i += 1
+                        st.image(img, use_container_width=True)
 
 
 # ===============================
