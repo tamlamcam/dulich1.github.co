@@ -7,7 +7,7 @@ st.set_page_config(page_title="Dịch vụ thuê xe", page_icon="🚗", layout="
 col1, col2 = st.columns([1,4])
 
 with col1:
-    st.image("logo.png", width=400)
+    st.image("logo.png", width=120)
 
 with col2:
     st.title("Chauffeur & Limousine")
@@ -22,23 +22,15 @@ menu = st.radio(
 )
 
 # ===============================
-# TRANG CHỦ - GALLERY XE
+# TRANG CHỦ
 # ===============================
-
-import streamlit as st
-
-st.set_page_config(page_title="Dịch vụ thuê xe", layout="wide")
-
-menu = st.sidebar.selectbox(
-    "Menu",
-    ["Trang chủ","Báo giá","Đặt xe","Liên hệ"]
-)
 
 if menu == "Trang chủ":
 
-    st.title("Dịch vụ cho thuê xe du lịch")
+    st.header("Các dòng xe của chúng tôi")
 
     cars = {
+
         "Toyota Innova":[
         "Toyota Innova.jpeg",
         "Toyota Innova3.jpeg",
@@ -74,7 +66,7 @@ if menu == "Trang chủ":
 
             st.image(images[0], use_container_width=True)
 
-            if st.button(f"Xem ảnh {car}"):
+            if st.button(f"Xem ảnh {car}", key=car):
 
                 st.subheader(car)
 
@@ -131,14 +123,15 @@ elif menu == "Đặt xe":
             st.warning("Vui lòng nhập tên và số điện thoại")
 
 # ===============================
-# LIÊN HỆ + GOOGLE MAP
+# LIÊN HỆ
 # ===============================
 
 elif menu == "Liên hệ":
 
     st.header("Thông tin liên hệ")
+
     st.write("Ha Noi Tourist and Trading")
-    st.write("📍Head office: 13th Floor, Tower of Hanoi, 49 Hai Ba Trung, Tran Hung Dao Ward, Hoan Kiem District, Hanoi City")
+    st.write("📍 Head office: 49 Hai Ba Trung, Hoan Kiem, Hanoi")
     st.write("📍 Executive office: 829 Bạch Đằng, Hà Nội")
     st.write("📞 Hotline: +84 4 39361030")
     st.write("📞 Hotline: +84 439367602")
