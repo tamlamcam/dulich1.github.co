@@ -35,29 +35,27 @@ if menu == "Trang chủ":
 
     cars = {
         "Toyota Innova":[
-        "Toyota Innova.jpeg",
-        "Toyota Innova3.jpeg",
-        "Toyota Innova4.jpeg",
-        "Toyota Innova5.jpeg",
-        "Toyota Innova6.jpeg"
+        "Toyota Innova.jpg",
+        "Toyota Innova3.jpg",
+        "Toyota Innova4.jpg",
         ],
 
         "Toyota Fortuner":[
-             "Toyota Fortuner.jpeg",
-             "Toyota Fortuner3.jpeg",
-             "Toyota Fortuner4.jpeg"
+             "Toyota Fortuner.jpg",
+             "Toyota Fortuner3.jpg",
+             "Toyota Fortuner4.jpg"
         ],
 
         "Toyota Camry":[
-             "Toyota Camry.jpeg",
-             "Toyota Camry3.jpeg",
-             "Toyota Camry4.jpeg"
+             "Toyota Camry.jpg",
+             "Toyota Camry3.jpg",
+             "Toyota Camry4.jpg"
         ],
 
         "Kia Carnival":[
-             "Kia Carnival.jpeg",
-             "Kia Carnival3.jpeg",
-             "Kia Carnival4.jpeg"
+             "Kia Carnival.jpg",
+             "Kia Carnival3.jpg",
+             "Kia Carnival4.jpg"
         ]
     }
 
