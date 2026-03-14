@@ -7,10 +7,10 @@ st.set_page_config(page_title="Dịch vụ thuê xe", page_icon="🚗", layout="
 col1, col2 = st.columns([1,4])
 
 with col1:
-    st.image("logo.png", width=120)
+    st.image("logo.png", width=400)
 
 with col2:
-    st.title("DỊCH VỤ CHO THUÊ XE DU LỊCH")
+    st.title("Chauffeur & Limousine")
     st.write("Đưa đón sân bay • Công tác • Du lịch • Sự kiện")
 
 st.divider()
@@ -31,23 +31,23 @@ if menu == "Trang chủ":
 
     cars = {
         "Toyota Innova": [
-            "https://upload.wikimedia.org/wikipedia/commons/3/3e/Toyota_Innova.jpg",
-            "https://upload.wikimedia.org/wikipedia/commons/5/55/Toyota_Innova_interior.jpg"
+            "Toyota Innova.png",
+            "Toyota Innova2.jpg"
         ],
 
         "Toyota Fortuner":[
-            "https://upload.wikimedia.org/wikipedia/commons/7/70/Toyota_Fortuner.jpg",
-            "https://upload.wikimedia.org/wikipedia/commons/2/2e/Fortuner_interior.jpg"
+            "Toyota Fortuner.jpg",
+            "Toyota Fortuner2.jpg"
         ],
 
         "Toyota Camry":[
-            "https://upload.wikimedia.org/wikipedia/commons/8/8c/Toyota_Camry.jpg",
-            "https://upload.wikimedia.org/wikipedia/commons/5/56/Toyota_Camry_interior.jpg"
+            "Toyota Camry.jpg",
+            "Toyota Camry2.jpg"
         ],
 
         "Kia Carnival":[
-            "https://upload.wikimedia.org/wikipedia/commons/0/02/Kia_Carnival.jpg",
-            "https://upload.wikimedia.org/wikipedia/commons/6/6e/Kia_Carnival_interior.jpg"
+            "Kia Carnival.jpg",
+            "Kia Carnival2.jpg"
         ]
     }
 
@@ -120,9 +120,11 @@ elif menu == "Đặt xe":
 elif menu == "Liên hệ":
 
     st.header("Thông tin liên hệ")
-
-    st.write("📍 Địa chỉ: 829 Bạch Đằng, Hà Nội")
-    st.write("📞 Hotline: 0900 000 000")
+    st.write("Ha Noi Tourist and Trading")
+    st.write("📍Head office: 13th Floor, Tower of Hanoi, 49 Hai Ba Trung, Tran Hung Dao Ward, Hoan Kiem District, Hanoi City")
+    st.write("📍 Executive office: 829 Bạch Đằng, Hà Nội")
+    st.write("📞 Hotline: +84 4 39361030")
+    st.write("📞 Hotline: +84 439367602")
 
     st.subheader("Bản đồ")
 
