@@ -8,7 +8,7 @@ st.markdown("""
 
 /* Thu nhỏ sidebar */
 section[data-testid="stSidebar"] {
-    width: 220px !important;
+    width:220px !important;
 }
 
 /* Khoảng cách menu */
@@ -34,6 +34,21 @@ section[data-testid="stSidebar"] .stRadio label{
 /* Hover */
 section[data-testid="stSidebar"] .stRadio label:hover{
     background-color:#57b876;
+}
+
+/* Khung ảnh xe */
+.car-card{
+    width:100%;
+    height:250px;
+    overflow:hidden;
+    border-radius:8px;
+}
+
+/* Ảnh luôn vừa khung */
+.car-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
 </style>
@@ -102,11 +117,15 @@ if menu == "Trang chủ":
 
         with cols[i]:
 
-            # ảnh đại diện xe
+            # khung ảnh cố định
+            st.markdown('<div class="car-card">', unsafe_allow_html=True)
+
             if os.path.exists(images[0]):
                 st.image(images[0], use_container_width=True)
             else:
                 st.warning(f"Không tìm thấy ảnh: {images[0]}")
+
+            st.markdown('</div>', unsafe_allow_html=True)
 
             # nút xem ảnh
             if st.button(f"Xem ảnh {car}", key=car):
