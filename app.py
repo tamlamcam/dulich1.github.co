@@ -76,17 +76,17 @@ if menu == "Trang chủ":
 
                 st.subheader(car)
 
-                gallery = st.columns(2)
+                cols_gallery = st.columns(len(images))
 
-                for j,img in enumerate(images):
+                for j, img in enumerate(images):
 
-                    with gallery[j % 2]:
+                  with cols_gallery[j]:
 
-                        if os.path.exists(img):
-                            st.image(img, use_container_width=600)
-                        else:
-                            st.warning(f"Thiếu ảnh: {img}")
-
+                    if os.path.exists(img):
+                     st.image(img, width=1500)
+                    else:
+                     st.warning(f"Thiếu ảnh: {img}")
+                 
 # ===============================
 # BẢNG GIÁ
 # ===============================
