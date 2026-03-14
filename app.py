@@ -1,5 +1,7 @@
 import streamlit as st
 import pandas as pd
+import os
+
 
 st.set_page_config(page_title="Dịch vụ thuê xe", page_icon="🚗", layout="wide")
 
@@ -25,12 +27,13 @@ menu = st.radio(
 # TRANG CHỦ
 # ===============================
 
+
+
 if menu == "Trang chủ":
 
     st.header("Các dòng xe của chúng tôi")
 
     cars = {
-
         "Toyota Innova":[
         "Toyota Innova.jpeg",
         "Toyota Innova3.jpeg",
@@ -64,8 +67,13 @@ if menu == "Trang chủ":
 
         with cols[i]:
 
-            st.image(images[0], use_container_width=True)
+            # hiển thị ảnh đại diện
+            if os.path.exists(images[0]):
+                st.image(images[0], use_container_width=True)
+            else:
+                st.warning(f"Không tìm thấy ảnh: {images[0]}")
 
+            # nút xem gallery
             if st.button(f"Xem ảnh {car}", key=car):
 
                 st.subheader(car)
@@ -74,9 +82,12 @@ if menu == "Trang chủ":
 
                 for j,img in enumerate(images):
 
-                    with gallery[j%2]:
+                    with gallery[j % 2]:
 
-                        st.image(img, use_container_width=True)
+                        if os.path.exists(img):
+                            st.image(img, use_container_width=True)
+                        else:
+                            st.warning(f"Thiếu ảnh: {img}")
 
 # ===============================
 # BẢNG GIÁ
