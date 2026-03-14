@@ -31,7 +31,7 @@ if menu == "Trang chủ":
 
     cars = {
         "Toyota Innova": [
-            st.image("Toyota Innova.png",width=400),
+            st.image("Toyota Innova2.jpg",width=400),
             st.image("Toyota Innova2.jpg",width=400)
         ],
 
