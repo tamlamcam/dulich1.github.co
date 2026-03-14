@@ -83,7 +83,7 @@ if menu == "Trang chủ":
                   with cols_gallery[j]:
 
                     if os.path.exists(img):
-                     st.image(img, width=1500)
+                     st.image(img, width=4000)
                     else:
                      st.warning(f"Thiếu ảnh: {img}")
                  
