@@ -31,23 +31,23 @@ if menu == "Trang chủ":
 
     cars = {
         "Toyota Innova": [
-            "Toyota Innova.png",
-            "Toyota Innova2.jpg"
+            st.image("Toyota Innova.png"width=400),
+            st.image("Toyota Innova2.jpg"width=400)
         ],
 
         "Toyota Fortuner":[
-            "Toyota Fortuner.jpg",
-            "Toyota Fortuner2.jpg"
+             st.image("Toyota Fortuner.jpg"width=400),
+             st.image("Toyota Fortuner2.jpg"width=400)
         ],
 
         "Toyota Camry":[
-            "Toyota Camry.jpg",
-            "Toyota Camry2.jpg"
+            st.image("Toyota Camry.jpg"width=400),
+            st.image("Toyota Camry2.jpg"width=400)
         ],
 
         "Kia Carnival":[
-            "Kia Carnival.jpg",
-            "Kia Carnival2.jpg"
+            st.image("Kia Carnival.jpg"width=400),
+            st.image("Kia Carnival2.jpg"width=400)
         ]
     }
 
@@ -60,11 +60,11 @@ if menu == "Trang chủ":
 
             st.image(images[0])
 
-            if st.button(f"Xem chi tiết {car}"):
+            if st.button(f"Xem chi tiết {Toyota Innova}"):
 
-                st.subheader(car)
+                st.subheader(Toyota Innova)
 
-                st.image(images)
+                st.image(Toyota Innova.png)
 
         i += 1
 
