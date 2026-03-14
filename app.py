@@ -60,8 +60,8 @@ if menu == "Trang chủ":
         ],
 
         "Kia Carnival":[
-             "Kia Carnival.jpeg"
-             "Kia Carnival3.jpeg"
+             "Kia Carnival.jpeg",
+             "Kia Carnival3.jpeg",
              "Kia Carnival4.jpeg"
         ]
     }
