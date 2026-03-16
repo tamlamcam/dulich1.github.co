@@ -128,7 +128,7 @@ if menu == "Trang chủ":
             st.markdown('</div>', unsafe_allow_html=True)
 
             # nút xem ảnh
-            if st.button(f"Xem ảnh {car}", key=car):
+            if st.button(f" {car}", key=car):
 
                 st.subheader(car)
 
