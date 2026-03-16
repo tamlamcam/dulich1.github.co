@@ -2,41 +2,54 @@ import streamlit as st
 import pandas as pd
 import os
 
-# ===== CSS GIAO DIỆN =====
+st.set_page_config(page_title="Dịch vụ thuê xe", page_icon="🚗", layout="wide")
+
+# ===== CSS =====
 st.markdown("""
 <style>
 
-/* Thu nhỏ sidebar */
-section[data-testid="stSidebar"] {
-    width:220px !important;
+/* Ẩn sidebar */
+section[data-testid="stSidebar"]{
+    display:none;
 }
 
-/* Khoảng cách menu */
-section[data-testid="stSidebar"] .stRadio > div{
-    gap:12px;
-}
-
-/* Khung menu */
-section[data-testid="stSidebar"] .stRadio label{
-    background-color:#6ccf8f;
-    color:white;
-    padding:14px;
-    border-radius:6px;
-    border:1px solid #5bb97a;
+/* MENU */
+.top-menu{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    background:#6ccf8f;
+    padding:10px 40px;
     display:flex;
-    justify-content:center;
     align-items:center;
-    text-align:center;
+    gap:40px;
+    z-index:999;
+}
+
+/* logo */
+.logo{
+    height:40px;
+}
+
+/* menu link */
+.top-menu a{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
     font-weight:bold;
-    height:50px;
 }
 
-/* Hover */
-section[data-testid="stSidebar"] .stRadio label:hover{
-    background-color:#57b876;
+.top-menu a:hover{
+    color:#eafff0;
 }
 
-/* Khung ảnh xe */
+/* đẩy nội dung xuống */
+.main{
+    margin-top:90px;
+}
+
+/* khung ảnh xe */
 .car-card{
     width:100%;
     height:250px;
@@ -44,7 +57,6 @@ section[data-testid="stSidebar"] .stRadio label:hover{
     border-radius:8px;
 }
 
-/* Ảnh luôn vừa khung */
 .car-card img{
     width:100%;
     height:100%;
@@ -54,32 +66,35 @@ section[data-testid="stSidebar"] .stRadio label:hover{
 </style>
 """, unsafe_allow_html=True)
 
-# ===== CẤU HÌNH TRANG =====
-st.set_page_config(page_title="Dịch vụ thuê xe", page_icon="🚗", layout="wide")
+# ===== MENU =====
+menu = st.query_params.get("menu","Trang chủ")
+
+st.markdown("""
+<div class="top-menu">
+
+<a href="?menu=Trang chủ">
+<img src="logo.png" class="logo">
+</a>
+
+<a href="?menu=Trang chủ">Trang chủ</a>
+<a href="?menu=Bảng giá">Bảng giá</a>
+<a href="?menu=Đặt xe">Đặt xe</a>
+<a href="?menu=Liên hệ">Liên hệ</a>
+
+</div>
+""", unsafe_allow_html=True)
+
+st.markdown('<div class="main">', unsafe_allow_html=True)
 
 # ===== HEADER =====
-col1, col2 = st.columns([1,4])
-
-with col1:
-    if os.path.exists("logo.png"):
-        st.image("logo.png", width=150)
-
-with col2:
-    st.title("Chauffeur & Limousine")
-    st.write("Đưa đón sân bay • Công tác • Du lịch • Sự kiện")
+st.title("Chauffeur & Limousine")
+st.write("Đưa đón sân bay • Công tác • Du lịch • Sự kiện")
 
 st.divider()
 
-# ===== MENU =====
-menu = st.sidebar.radio(
-    "MENU",
-    ["Trang chủ","Bảng giá","Đặt xe","Liên hệ"]
-)
-
-# ===============================
+# ======================
 # TRANG CHỦ
-# ===============================
-
+# ======================
 if menu == "Trang chủ":
 
     st.header("Các dòng xe của chúng tôi")
@@ -89,7 +104,7 @@ if menu == "Trang chủ":
         "Toyota Innova":[
             "Toyota Innova.jpg",
             "Toyota Innova3.jpg",
-            "Toyota Innova4.jpg",
+            "Toyota Innova4.jpg"
         ],
 
         "Toyota Fortuner":[
@@ -117,18 +132,16 @@ if menu == "Trang chủ":
 
         with cols[i]:
 
-            # khung ảnh cố định
             st.markdown('<div class="car-card">', unsafe_allow_html=True)
 
             if os.path.exists(images[0]):
                 st.image(images[0], use_container_width=True)
             else:
-                st.warning(f"Không tìm thấy ảnh: {images[0]}")
+                st.warning(f"Không tìm thấy ảnh {images[0]}")
 
             st.markdown('</div>', unsafe_allow_html=True)
 
-            # nút xem ảnh
-            if st.button(f" {car}", key=car):
+            if st.button(car, key=car):
 
                 st.subheader(car)
 
@@ -137,12 +150,11 @@ if menu == "Trang chủ":
                     if os.path.exists(img):
                         st.image(img, use_container_width=True)
                     else:
-                        st.warning(f"Thiếu ảnh: {img}")
+                        st.warning(f"Thiếu ảnh {img}")
 
-# ===============================
+# ======================
 # BẢNG GIÁ
-# ===============================
-
+# ======================
 elif menu == "Bảng giá":
 
     st.header("Bảng giá thuê xe")
@@ -156,10 +168,9 @@ elif menu == "Bảng giá":
         except:
             st.error("Không tìm thấy file Excel báo giá")
 
-# ===============================
+# ======================
 # FORM ĐẶT XE
-# ===============================
-
+# ======================
 elif menu == "Đặt xe":
 
     st.header("Form đặt xe")
@@ -183,10 +194,9 @@ elif menu == "Đặt xe":
         else:
             st.warning("Vui lòng nhập tên và số điện thoại")
 
-# ===============================
+# ======================
 # LIÊN HỆ
-# ===============================
-
+# ======================
 elif menu == "Liên hệ":
 
     st.header("Thông tin liên hệ")
@@ -206,3 +216,5 @@ elif menu == "Liên hệ":
 
 st.divider()
 st.caption("© 2026 Dịch vụ cho thuê xe")
+
+st.markdown("</div>", unsafe_allow_html=True)
